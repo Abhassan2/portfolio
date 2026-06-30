@@ -36,65 +36,74 @@ export default function Contact() {
         </h1>
       </div>
 
-      <form
-        onSubmit={onSubmit}
-        className="space-y-4 sm:mx-auto sm:space-y-6 mt-8 px-5 my-10 max-w-xl sm:px-10"
-      >
-
-        {success && (
-          <p className={`flex justify-between w-full text-center text-white text-base md:text-xl bg-green-500 p-3 rounded-xl ${ alertbox ? "hidden" : "" }`}>
-            {success}
-            <IoClose size={28} onClick={() => setAlertbox(!alertbox)} />
-          </p>
-        )}
-        {error && (
-          <p className={`flex justify-between w-full text-center text-white text-base md:text-xl bg-red-500 p-3 rounded-xl ${ alertbox ? "hidden" : "" }`}>
-            {error}
-            <IoClose size={28} onClick={() => setAlertbox(!alertbox)} />
-          </p>
-        )}
-
-        <div className="flex flex-col sm:flex-row gap-4">
-          <input
-            data-aos="zoom-in-left"
-            type="text"
-            name="name"
-            placeholder="Enter your name"
-            required
-            className="w-full sm:w-1/2 bg-slate-900 p-4 rounded-xl"
-          />
-
-          <input
-            data-aos="zoom-in-right"
-            type="email"
-            name="email"
-            placeholder="Enter your email"
-            required
-            className="w-full sm:w-1/2 bg-slate-900 p-4 rounded-xl"
-          />
-        </div>
-
-        <textarea
-          data-aos="zoom-in-left"
-          name="message"
-          rows="5"
-          placeholder="Enter your message"
-          required
-          className="w-full bg-slate-900 p-4 rounded-xl"
-        />
-
-        <button
-          data-aos="zoom-in-right"
-          data-aos-offset="10"
-          type="submit"
-          className="w-full flex justify-center items-center gap-1 bg-linear-to-r from-purple-600 to-pink-500 
-                 py-4 rounded-xl font-semibold shadow-md hover:shadow-lg 
-                 transition-all duration-300 mx-auto"
+      <div className="flex flex-col lg:flex-row lg:pr-10">
+        <form
+          onSubmit={onSubmit}
+          className="space-y-4 mt-8 px-5 my-10 max-w-xl sm:mx-auto sm:px-10 sm:space-y-6 md:mx-15 md:max-w-4xl lg:mx-0 lg:max-w-3xl"
         >
-          <FiSend />
-          Send
-        </button>
-      </form>
+          {success && (
+            <p
+              className={`flex justify-between w-full text-center text-white text-base md:text-xl bg-green-500 p-3 rounded-xl ${alertbox ? "hidden" : ""}`}
+            >
+              {success}
+              <IoClose size={28} onClick={() => setAlertbox(!alertbox)} />
+            </p>
+          )}
+          {error && (
+            <p
+              className={`flex justify-between w-full text-center text-white text-base md:text-xl bg-red-500 p-3 rounded-xl ${alertbox ? "hidden" : ""}`}
+            >
+              {error}
+              <IoClose size={28} onClick={() => setAlertbox(!alertbox)} />
+            </p>
+          )}
+
+          <div className="flex flex-col sm:flex-row gap-4">
+            <input
+              data-aos="zoom-in-left"
+              type="text"
+              name="name"
+              placeholder="Enter your name"
+              required
+              className="w-full sm:w-1/2 bg-slate-900 p-4 rounded-xl"
+            />
+
+            <input
+              data-aos="zoom-in-right"
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+              className="w-full sm:w-1/2 bg-slate-900 p-4 rounded-xl"
+            />
+          </div>
+
+          <textarea
+            data-aos="zoom-in-left"
+            name="message"
+            rows="5"
+            placeholder="Enter your message"
+            required
+            className="w-full bg-slate-900 p-4 rounded-xl"
+          />
+
+          <button
+            data-aos="zoom-in-right"
+            data-aos-offset="10"
+            type="submit"
+            className="w-full flex justify-center items-center gap-1 bg-linear-to-r from-purple-600 to-pink-500 
+                 py-4 rounded-xl font-semibold shadow-md hover:shadow-lg 
+                 transition transform active:scale-95 mx-auto"
+          >
+            <FiSend />
+            Send
+          </button>
+        </form>
+
+        <video autoPlay muted loop  className="hidden lg:w-124 lg:h-80 lg:block lg:mt-8 object-cover rounded-xl">
+          <source src="/sendingVideo.mp4" />
+        </video>
+      </div>
     </div>
   );
 }
