@@ -36,7 +36,7 @@ export default function Contact() {
         </h1>
       </div>
 
-      <div className="flex flex-col lg:flex-row lg:pr-10">
+      <div className="flex flex-col lg:justify-center lg:flex-row lg:pr-10">
         <form
           onSubmit={onSubmit}
           className="space-y-4 mt-8 px-5 my-10 max-w-xl sm:mx-auto sm:px-10 sm:space-y-6 md:mx-15 md:max-w-4xl lg:mx-0 lg:max-w-3xl"
